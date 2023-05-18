@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import './App.css'
+import Cookies from 'js-cookie';
+// import jwt_decode from "jwt-decode";
+
 
 function App() {
 
@@ -34,7 +37,13 @@ function App() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    });
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        const token = responseData.jwt;
+        Cookies.set("token", token);
+      });
+
     console.log('Username:', username);
     console.log('Email:', email);
     console.log('Password:', password);
