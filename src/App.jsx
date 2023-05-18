@@ -4,7 +4,8 @@ import Profile from './Profile/Profile';
 import Register from './Register/Register';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
-import Login from './Login/Login'
+import Login from './Login/Login';
+import Logout from './Logout/Logout';
 import Home from './Home/Home';
 
 // navbar à importer
@@ -23,7 +24,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/login" element={<LogIn />} /> */}
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>
     </BrowserRouter>
