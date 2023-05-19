@@ -7,6 +7,7 @@ import Navbar from './Navbar/Navbar';
 import Login from './Login/Login';
 import Logout from './Logout/Logout';
 import Home from './Home/Home';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 // navbar à importer
 // import jwt_decode from "jwt-decode";
@@ -21,7 +22,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route element={<PrivateRoutes />} >
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
