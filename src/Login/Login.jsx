@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [identifier, setIdentifier] = useState('');
@@ -12,6 +13,7 @@ const Login = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
+    const navigateLogIn = useNavigate();
 
     const handleLogin = () => {
         // Here you can implement your authentication logic
@@ -20,6 +22,8 @@ const Login = () => {
             identifier: identifier,
             password: password
         };
+
+
 
         fetch('http://localhost:1337/api/auth/local/', {
             method: 'post',
@@ -33,6 +37,7 @@ const Login = () => {
                 const token = responseData.jwt;
                 console.log(responseData.jwt)
                 Cookies.set("token", token);
+                navigateLogIn('/profile')
             });
 
 
