@@ -21,6 +21,9 @@ const Navbar = () => {
                     <NavLink to="/logout">
                         <li>Logout</li>
                     </NavLink>
+                    <NavLink to="/post">
+                        <li>Créer un post</li>
+                    </NavLink>
                 </ul>
             </nav>
         </div>

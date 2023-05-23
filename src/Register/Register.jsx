@@ -18,8 +18,6 @@ function Register() {
     };
 
     const handleRegister = () => {
-        // Here you can implement your authentication logic
-        // For simplicity, let's just log the entered username and password
         const data = {
             username: username,
             email: email,

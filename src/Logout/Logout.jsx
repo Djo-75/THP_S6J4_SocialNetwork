@@ -11,8 +11,6 @@ const Logout = () => {
         navigateLogOut("/")
     }
 
-
-
     return (
         <div>
             <h2>Logout</h2>
